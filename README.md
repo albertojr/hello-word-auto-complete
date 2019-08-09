@@ -1,2 +1,2 @@
-# hello-word-auto-complete
+# hello-world-auto-complete
 Pequeno projeto para teste de implementação do auto-complete do Django
