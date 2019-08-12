@@ -18,3 +18,13 @@ class EstadoAutocomplete(autocomplete.Select2QuerySetView):
             qs = qs.filter(nomeEstado__istartswith=self.q)
 
         return qs
+
+class LinkedDataView(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = super(LinkedDataView, self).get_queryset()
+        estado = self.forwarded.get('estado', None)
+    
+        if estado:
+            qs = qs.filter(estados_id=estado)
+    
+        return qs

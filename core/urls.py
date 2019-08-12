@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
-from hellowordAutoComplete.views import EstadoAutocomplete
+from hellowordAutoComplete.views import EstadoAutocomplete,LinkedDataView
+from hellowordAutoComplete.models import Person,Cidade
 
 """core URL Configuration
 
@@ -20,5 +21,6 @@ Including another URLconf
 
 urlpatterns = [
     path('', admin.site.urls),
-    path('estado-autocomplete/',EstadoAutocomplete.as_view(),name='estados-autocomplete',),
+    #path('estado-autocomplete/',EstadoAutocomplete.as_view(),name='estados-autocomplete',),
+    path('linked_data/',LinkedDataView.as_view(model=Cidade),name='linked_data',),
 ]
